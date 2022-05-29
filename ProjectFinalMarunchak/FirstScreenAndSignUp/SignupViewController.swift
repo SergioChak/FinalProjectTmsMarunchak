@@ -121,11 +121,28 @@ class SignupViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.placeholder = "Create Password"
         textField.isSecureTextEntry  = true
+//        textField.rightViewMode = UITextField.ViewMode.always
         textField.widthAnchor.constraint(equalToConstant: 335).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        textField.rightView = UIImageView.init(image: UIImage(named: "eye"))
+//        textField.rightView?.frame = CGRect(x: 0, y: 0, width: 25, height: 19.44)
+        textField.rightView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        textField.rightView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        textField.rightView?.tintColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1)
+        textField.rightViewMode = .unlessEditing
+       
+//        var imageView = UIImageView();
+//        var image = UIImage(named: "eye");
+//        imageView.image = image;
+//        textField.rightView = imageView;
+//        imageView.layer.backgroundColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1).cgColor
+//        textField.addSubview(imageView)
+//        imageView.leftAnchor.constraint(equalTo: textField.leftAnchor, constant: 307).isActive = true
+//        imageView.rightAnchor.constraint(equalTo: textField.rightAnchor, constant: -43).isActive = true
+//        imageView.topAnchor.constraint(equalTo: textField.topAnchor, constant: 15).isActive = true
+//        imageView.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 16).isActive = true
         return textField
     }()
-    
     private let passwordValidLabel: UILabel = {
        let label  = UILabel()
         label.text = "Required field"
