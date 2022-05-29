@@ -6,6 +6,10 @@
 //
 
 import UIKit
+protocol buttonTapper:AnyObject{
+    func buttonTaps()
+}
+
 
 class MainShopScreenIfSkipAuthorizationViewController: UIViewController {
 
@@ -27,4 +31,13 @@ view = MainShopScreenIfSkipAuthorizationView()
     }
     */
 
+}
+
+extension MainShopScreenIfSkipAuthorizationViewController:buttonTapper{
+    func buttonTaps() {
+        print(" i should disappear")
+        navigationController?.pushViewController(SignupViewController(), animated: false)
+//        self.dismiss(animated: true, completion: nil)
+    
+}
 }

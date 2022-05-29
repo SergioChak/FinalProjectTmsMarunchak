@@ -103,6 +103,8 @@ final class FramesView: UIView {
      
      @objc private func buttonTaps(){
          print("the button was actually tapped!")
+         
+         
 //         print("button frame is \(goShoppingButton.frame) and buttons bounds are \(goShoppingButton.bounds)")
 //         goShoppingButton.frame.origin = .init(x: 80, y: aproveEmailLabel.frame.origin.y + aproveEmailLabel.frame.height + 8 + 50)
          

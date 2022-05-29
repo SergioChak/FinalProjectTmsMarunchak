@@ -203,6 +203,7 @@ class RegistrationViewController: UIViewController {
         let navVc = UINavigationController(rootViewController: MainShopScreenIfSkipAuthorizationViewController())
             navVc.modalPresentationStyle = .fullScreen
             self.present(navVc, animated: true)
+       
     }
 }
 

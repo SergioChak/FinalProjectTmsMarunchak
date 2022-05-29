@@ -130,7 +130,7 @@ class SignupViewController: UIViewController {
         textField.rightView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         textField.rightView?.tintColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1)
         textField.rightViewMode = .unlessEditing
-       
+        
 //        var imageView = UIImageView();
 //        var image = UIImage(named: "eye");
 //        imageView.image = image;
