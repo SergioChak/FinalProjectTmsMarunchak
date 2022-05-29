@@ -83,7 +83,7 @@ class RegistrationViewController: UIViewController {
         button.layer.borderColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1).cgColor
         button.setImage(UIImage(named: "facebookLoginButton"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.addTarget(self, action: #selector(facebookButtonDidTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(facebookButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -207,15 +207,31 @@ class RegistrationViewController: UIViewController {
         _ = tapGestureRecognizer.view as! UIImageView
         widthOfLogosImage.constant += 40
         HeightOfLogosImage.constant += 40
-        UIView.animate(withDuration: 1.5, delay: .zero, options: [.curveEaseInOut, .curveEaseOut, .autoreverse]){
+        //строка ниже делает прозрачность рандомной при каждом нажатии(в данном случае 3-ом) в диапазоне от 0 до 1)
+        logoImage.alpha = .random(in: 0...1)
+        UIView.animate(withDuration: 1, delay: .zero, options: [.curveEaseInOut, .curveEaseOut, .autoreverse]){
             self.view.layoutIfNeeded()
         }
         widthOfLogosImage.constant -= 40
         HeightOfLogosImage.constant -= 40
-        UIView.animate(withDuration: 1.5, delay: 1.5, options: [.curveEaseOut, .curveEaseInOut , .autoreverse]){
+        UIView.animate(withDuration: 1.5, delay: 1.1, options: [.curveEaseOut, .curveEaseInOut , .autoreverse]){
             self.view.layoutIfNeeded()
         }
        
+    }
+    
+    @objc private func facebookButtonDidTap(){
+        self.widthOfLogosImage.constant += 30
+        UIView.animate(withDuration: 0.5, delay: .zero, options: .curveLinear){
+            self.view.layoutIfNeeded()
+        }
+        
+        self.HeightOfLogosImage.constant += 30
+        UIView.animate(withDuration: 0.6, delay: .zero, options: .curveEaseInOut){
+            self.view.layoutIfNeeded()
+        }
+        
+        
     }
     
     @objc private func signUpButtonDidTap(){

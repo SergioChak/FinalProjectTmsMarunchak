@@ -31,11 +31,10 @@ final class FramesView: UIView {
     }()
    
     private func configGesture(){
-
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(aproveEmailLabelDidTap))
-    tapGesture.numberOfTapsRequired = 1
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(aproveEmailLabelDidTap))
+        tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
-    aproveEmailLabel.addGestureRecognizer(tapGesture)
+        aproveEmailLabel.addGestureRecognizer(tapGesture)
     }
     
     private let goShoppingButton: UIButton = {
@@ -65,13 +64,50 @@ final class FramesView: UIView {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-//        aproveEmailLabel.clipsToBounds = true
         thanksLabel.frame = CGRect(x: 32, y: 258, width: 311, height: 52)
         aproveEmailLabel.frame = CGRect(x: 26, y: 347, width: 320, height: 80)
         goShoppingButton.frame = CGRect(x: 63, y: aproveEmailLabel.frame.origin.y + aproveEmailLabel.frame.height + 8, width: 250, height: 50)
         
     }
     
+
+}
+ extension FramesView{
+     
+     @objc private func aproveEmailLabelDidTap(_ gesture:UITapGestureRecognizer){
+         UIView.animateKeyframes(withDuration: 4, delay: .zero, options: .calculationModePaced){
+             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1){
+                 self.aproveEmailLabel.transform = CGAffineTransform(scaleX: -2, y: -2)
+             }
+             UIView.addKeyframe(withRelativeStartTime: 2, relativeDuration: 1.5){
+                 self.aproveEmailLabel.transform = CGAffineTransform(scaleX: +1, y: +1) }
+         }
+     }
+     
+     @objc private func buttonTaps(){
+         print("the button was actually tapped!")
+         UIView.animateKeyframes(withDuration: 4, delay: .zero, options: [.calculationModePaced,.autoreverse]){
+             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1){
+             self.goShoppingButton.transform = CGAffineTransform(rotationAngle: 69)
+             }
+                 UIView.addKeyframe(withRelativeStartTime: 1, relativeDuration: 1){
+             self.goShoppingButton.transform = CGAffineTransform(scaleX: -1, y: 2)
+             }
+             UIView.addKeyframe(withRelativeStartTime: 2, relativeDuration: 1){
+                 self.goShoppingButton.transform = CGAffineTransform(scaleX: +1, y: 2)
+                 }
+
+     }
+     
+}
+
+
+//         print("button frame is \(goShoppingButton.frame) and buttons bounds are \(goShoppingButton.bounds)")
+//         goShoppingButton.frame.origin = .init(x: 80, y: aproveEmailLabel.frame.origin.y + aproveEmailLabel.frame.height + 8 + 50)
+
+//         print("button frame is \(goShoppingButton.frame) and buttons bounds are \(goShoppingButton.bounds)")
+
+ }
 //    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
 //      let view = super.hitTest(point, with: event)
 //        print(view is UIButton)
@@ -94,23 +130,3 @@ final class FramesView: UIView {
 //
 //
 //}
-}
- extension FramesView{
-     
-     @objc private func aproveEmailLabelDidTap(_ gesture:UITapGestureRecognizer){
-         print("it works")
-     }
-     
-     @objc private func buttonTaps(){
-         print("the button was actually tapped!")
-         
-         
-//         print("button frame is \(goShoppingButton.frame) and buttons bounds are \(goShoppingButton.bounds)")
-//         goShoppingButton.frame.origin = .init(x: 80, y: aproveEmailLabel.frame.origin.y + aproveEmailLabel.frame.height + 8 + 50)
-         
-//         print("button frame is \(goShoppingButton.frame) and buttons bounds are \(goShoppingButton.bounds)")
-         
-     }
-     
-}
-

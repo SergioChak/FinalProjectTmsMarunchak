@@ -121,7 +121,6 @@ class SignupViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.placeholder = "Create Password"
         textField.isSecureTextEntry  = true
-//        textField.rightViewMode = UITextField.ViewMode.always
         textField.widthAnchor.constraint(equalToConstant: 335).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         textField.rightView = UIImageView.init(image: UIImage(named: "eye"))
@@ -246,9 +245,7 @@ class SignupViewController: UIViewController {
         datePicker.layer.cornerRadius = 12
         datePicker.timeZone = .autoupdatingCurrent
         datePicker.calendar = .autoupdatingCurrent
-//        datePicker.largeContentTitle = "Your birth date"
         datePicker.maximumDate = .now
-//        datePicker.minimumDate = .distantPast.addingTimeInterval(TimeInterval.)
         datePicker.preferredDatePickerStyle = .automatic
         datePicker.translatesAutoresizingMaskIntoConstraints  = false
         datePicker.tintColor = .black
@@ -363,37 +360,6 @@ extension SignupViewController: UITextFieldDelegate{
     }
 }
 
-//MARK: keyboard hides
-//extension SignupViewController{
-//    private func registerKeyboardNotification(){
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(keyboardWillShow),
-//                                               name: UIResponder.keyboardWillShowNotification,
-//                                               object: nil)
-//
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(keyboardWillHide),
-//                                               name: UIResponder.keyboardWillHideNotification,
-//                                               object: nil)
-//    }
-//
-//    private func removeKeyboardNotification(){
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-//
-//    }
-//
-//
-//    @objc private func keyboardWillShow(notification: Notification){
-//        let userInfo = notification.userInfo
-//        let keyBoardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-//        backGroundView.contentOffset = CGPoint(x: 0, y: keyBoardHeight.height/2.6)
-//    }
-//    @objc private func keyboardWillHide(notification: Notification){
-//        backGroundView.contentOffset = CGPoint.zero
-//    }
-//}
-
 
 //MARK: - Setting Constraints
  
@@ -404,8 +370,6 @@ extension SignupViewController{
 }
     
     private func setConstraints(){
-        
-  
         
         NSLayoutConstraint.activate([
          
@@ -439,3 +403,34 @@ extension SignupViewController{
     }
 }
 
+
+//MARK: keyboard hides
+//extension SignupViewController{
+//    private func registerKeyboardNotification(){
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(keyboardWillShow),
+//                                               name: UIResponder.keyboardWillShowNotification,
+//                                               object: nil)
+//
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(keyboardWillHide),
+//                                               name: UIResponder.keyboardWillHideNotification,
+//                                               object: nil)
+//    }
+//
+//    private func removeKeyboardNotification(){
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+//
+//    }
+//
+//
+//    @objc private func keyboardWillShow(notification: Notification){
+//        let userInfo = notification.userInfo
+//        let keyBoardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+//        backGroundView.contentOffset = CGPoint(x: 0, y: keyBoardHeight.height/2.6)
+//    }
+//    @objc private func keyboardWillHide(notification: Notification){
+//        backGroundView.contentOffset = CGPoint.zero
+//    }
+//}
