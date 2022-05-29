@@ -45,9 +45,8 @@ class RegistrationFinishedViewController: UIViewController, ButtonListener {
   //MARK: extensions
 
 extension RegistrationFinishedViewController{
-    @objc private func backAction() -> Void {
+    
+    @objc private func backAction(){
     self.navigationController?.popViewController(animated: true)
-//        dismiss(animated: true, completion: nil)
-
 }
 }

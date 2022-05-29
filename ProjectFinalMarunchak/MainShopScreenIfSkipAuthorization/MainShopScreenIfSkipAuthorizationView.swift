@@ -30,9 +30,6 @@ class MainShopScreenIfSkipAuthorizationView: UIView {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = true
-        //        label.font = .boldSystemFont(ofSize: 20)
-        //        label.widthAnchor.constraint(equalToConstant: 311).isActive = true
-        //        label.heightAnchor.constraint(equalToConstant: 52).isActive = true
         return label
     }()
     
@@ -89,6 +86,7 @@ class MainShopScreenIfSkipAuthorizationView: UIView {
     }
 }
 
+//MARK: animation on button and label
 extension MainShopScreenIfSkipAuthorizationView{
    // animation for label on tap
     @objc private func LabelDidTap(_ gesture:UITapGestureRecognizer){
@@ -113,8 +111,13 @@ extension MainShopScreenIfSkipAuthorizationView{
     // pop back the VC on tapping button
 @objc private func buttonTapped(_ sender:UIButton){
     delegate?.buttonTaps()
-    print(" i should disappear")
-
+    topConstraintForButton.constant += 120
+    leadingConstraintForButton.constant -= 50
+    topConstraintForLabel.constant += 10
+    leadingConstraintForLabel.constant += 30
+    UIView.animate(withDuration: 1.3, delay: .zero, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: .curveEaseOut){
+        self.layoutIfNeeded()
+    }
 }
 }
 

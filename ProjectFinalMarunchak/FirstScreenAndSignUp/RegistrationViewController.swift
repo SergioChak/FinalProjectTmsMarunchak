@@ -129,7 +129,8 @@ class RegistrationViewController: UIViewController {
     private var textFieldsStackView = UIStackView()
     private var signinInUpButtonsStackView = UIStackView()
     private var socialNetworkButtonsForLoginStackView = UIStackView()
-    
+    private lazy var signButtonsStackViewTop =  signinInUpButtonsStackView.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 32)
+     private lazy var signButtonsStackViewLeading = signinInUpButtonsStackView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 20)
 
     
     override func viewDidLoad() {
@@ -147,6 +148,8 @@ class RegistrationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        signButtonsStackViewTop.constant = 32
+        signButtonsStackViewLeading.constant = 20
         signUpButton.tintColor = .white
         print("bounds of  are \(scrollView.bounds)")
         print("frame of is \(signInButton.frame)")
@@ -192,7 +195,11 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc private func signUpButtonDidTap(){
-
+        signButtonsStackViewTop.constant += 100
+//        signButtonsStackViewLeading.constant -= 60
+        UIView.animate(withDuration: 0.3, delay: .zero, options: .curveEaseInOut){
+            self.view.layoutIfNeeded()
+        }
         navigationController?.pushViewController(SignupViewController(), animated: true)
         print("navigation works")
         signUpButton.tintColor = .red
@@ -236,6 +243,7 @@ extension RegistrationViewController{
 
     }
     
+   
     
     @objc private func keyboardWillShow(notification: Notification){
         let userInfo = notification.userInfo
@@ -286,11 +294,13 @@ extension RegistrationViewController{
             signUpButton.heightAnchor.constraint(equalToConstant: 56),
             signInButton.heightAnchor.constraint(equalToConstant: 56)
         ])
+       
         
         NSLayoutConstraint.activate([
-            signinInUpButtonsStackView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 20),
+            signButtonsStackViewLeading,
             signinInUpButtonsStackView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor, constant: -20),
-            signinInUpButtonsStackView.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 32)
+            signButtonsStackViewTop
+            
         ])
     
         NSLayoutConstraint.activate([
