@@ -11,7 +11,8 @@ class FramesViewController: UIViewController {
 
     override func loadView() {
         view = FramesView()
-        view.backgroundColor = .systemMint.withAlphaComponent(0.9)
+        view.backgroundColor = .systemMint.withAlphaComponent(1)
+        view.isUserInteractionEnabled = true
         (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .portrait
 
     }
