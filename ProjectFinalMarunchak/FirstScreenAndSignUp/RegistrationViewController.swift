@@ -131,12 +131,20 @@ class RegistrationViewController: UIViewController {
     private var socialNetworkButtonsForLoginStackView = UIStackView()
     private lazy var signButtonsStackViewTop =  signinInUpButtonsStackView.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 32)
      private lazy var signButtonsStackViewLeading = signinInUpButtonsStackView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 20)
+    
+    private lazy var widthOfLogosImage = logoImage.widthAnchor.constraint(equalToConstant: 280)
+    private lazy var HeightOfLogosImage = logoImage.heightAnchor.constraint(equalToConstant: 72)
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
          (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .portrait
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        logoImage.isUserInteractionEnabled = true
+        tapGestureRecognizer.numberOfTapsRequired = 3
+        logoImage.addGestureRecognizer(tapGestureRecognizer)
+
         setupViews()
         setupDelegate()
         setConstraints()
@@ -192,6 +200,22 @@ class RegistrationViewController: UIViewController {
     private func setupDelegate(){
         emailTextFiled.delegate = self
         passwordTextField.delegate = self
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        _ = tapGestureRecognizer.view as! UIImageView
+        widthOfLogosImage.constant += 40
+        HeightOfLogosImage.constant += 40
+        UIView.animate(withDuration: 1.5, delay: .zero, options: [.curveEaseInOut, .curveEaseOut, .autoreverse]){
+            self.view.layoutIfNeeded()
+        }
+        widthOfLogosImage.constant -= 40
+        HeightOfLogosImage.constant -= 40
+        UIView.animate(withDuration: 1.5, delay: 1.5, options: [.curveEaseOut, .curveEaseInOut , .autoreverse]){
+            self.view.layoutIfNeeded()
+        }
+       
     }
     
     @objc private func signUpButtonDidTap(){
@@ -279,8 +303,7 @@ extension RegistrationViewController{
             logoImage.topAnchor.constraint(equalTo: backGroundView.safeAreaLayoutGuide.topAnchor,constant: 96),
             logoImage.leftAnchor.constraint(equalTo: backGroundView.leftAnchor, constant: 32),
             logoImage.rightAnchor.constraint(equalTo: backGroundView.rightAnchor, constant: -32),
-            logoImage.widthAnchor.constraint(equalToConstant: 280),
-            logoImage.heightAnchor.constraint(equalToConstant: 72)
+            widthOfLogosImage,HeightOfLogosImage
         ])
         
         NSLayoutConstraint.activate([
