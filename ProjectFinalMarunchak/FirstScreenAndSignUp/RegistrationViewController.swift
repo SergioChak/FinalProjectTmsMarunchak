@@ -123,6 +123,7 @@ class RegistrationViewController: UIViewController {
         button.layer.borderColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1).cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .none
+        button.addTarget(self, action: #selector(skipButtonDidtap), for: .touchUpInside)
        return button
     }()
     
@@ -260,6 +261,11 @@ class RegistrationViewController: UIViewController {
         signUpButton.tintColor = .red
     }
     
+    @objc private func skipButtonDidtap(){
+        navigationController?.pushViewController(WIshListViewController(), animated: true)
+
+    }
+    
     //MARK: тут сделал переход на основной экран, сделав его рутовым навиг контроллером. Надо добавить еще таббары!!!
     @objc private func signInButtonDidTap(){
         let navVc = UINavigationController(rootViewController: MainShopScreenIfSkipAuthorizationViewController())
@@ -306,9 +312,9 @@ extension RegistrationViewController{
         scrollView.contentOffset = CGPoint(x: 0, y: keyBoardHeight.height/4)
     }
     @objc private func keyboardWillHide(notification: Notification){
-//        let userInfo = notification.userInfo
-//        let keyBoardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = .zero
+        let userInfo = notification.userInfo
+        let keyBoardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keyBoardHeight.height/(-4))
     }
 }
 

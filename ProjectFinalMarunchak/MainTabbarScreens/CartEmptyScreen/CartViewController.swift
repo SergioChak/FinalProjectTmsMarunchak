@@ -22,6 +22,7 @@ class CartViewController: UIViewController {
     
         let backbutton = UIButton(type: .custom)
         backbutton.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backbutton.isHidden = true
         backbutton.tintColor = .black
         backbutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
