@@ -51,7 +51,7 @@ class RegistrationFinishedView: UIView {
         button.layer.cornerRadius = 10
         button.setTitleColor(UIColor.black, for: .normal)
         button.isUserInteractionEnabled = true
-        button.setTitle("Go Shopping!", for: .normal)
+        button.setTitle("Return to LogIn!", for: .normal)
         button.addTarget(self, action: #selector(goShoppingButtonDidTap), for: .touchUpInside)
         return button
     }()

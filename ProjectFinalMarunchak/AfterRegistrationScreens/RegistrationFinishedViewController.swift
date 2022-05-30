@@ -12,7 +12,8 @@ protocol ButtonListener: AnyObject{
 
 class RegistrationFinishedViewController: UIViewController, ButtonListener {
     func listenButton() {
-        present(FramesViewController(), animated: true)
+//        present(FramesViewController(), animated: true)
+        navigationController?.popToRootViewController(animated: false)
         
 //        let navVc = UINavigationController(rootViewController: MainShopScreenIfSkipAuthorizationViewController())
 //            navVc.modalPresentationStyle = .fullScreen
