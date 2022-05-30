@@ -44,7 +44,7 @@ class CartView: UIView {
     
     private lazy var aboutAddintToCartLabel: UILabel = {
        let label = UILabel()
-        label.font = UIFont(name: "Intro-Black", size: 15)
+        label.font = UIFont(name: "Intro-Regular", size: 15)
         label.text = "Products, added to your cart, will appear in app after authorization"
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping

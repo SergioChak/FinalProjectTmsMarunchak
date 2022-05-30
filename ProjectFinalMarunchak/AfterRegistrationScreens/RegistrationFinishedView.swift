@@ -38,8 +38,8 @@ class RegistrationFinishedView: UIView {
         label.text = "To approve your account - please open the mail, we've send you on your E-Mail, and click the link in it!"
         label.widthAnchor.constraint(equalToConstant: 323).isActive = true
         label.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        label.font = UIFont(name: "Intro-Black", size: 14)
-        label.numberOfLines = 0 
+        label.font = UIFont(name: "Intro-Regular", size: 14)
+        label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
         return label
@@ -100,7 +100,7 @@ class RegistrationFinishedView: UIView {
         NSLayoutConstraint.activate([
             aproveEmailLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 26),
             aproveEmailLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -26),
-            aproveEmailLabel.topAnchor.constraint(lessThanOrEqualTo: thanksLabel.bottomAnchor, constant: 16)
+            aproveEmailLabel.topAnchor.constraint(lessThanOrEqualTo: thanksLabel.bottomAnchor, constant: -8)
         ])
     }
     
@@ -110,7 +110,7 @@ class RegistrationFinishedView: UIView {
             goShoppingButton.heightAnchor.constraint(equalToConstant: 50),
             goShoppingButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 63),
             goShoppingButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -62),
-            goShoppingButton.topAnchor.constraint(equalTo: aproveEmailLabel.bottomAnchor, constant: 8),
+            goShoppingButton.topAnchor.constraint(equalTo: aproveEmailLabel.bottomAnchor, constant: 24),
             goShoppingButton.bottomAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 16)
         ])
     }

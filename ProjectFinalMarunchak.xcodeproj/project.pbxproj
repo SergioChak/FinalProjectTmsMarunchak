@@ -20,9 +20,12 @@
 		3673E78D283D618E008BEA41 /* UiStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673E78C283D618E008BEA41 /* UiStackViewExtension.swift */; };
 		3673E78F283D61AE008BEA41 /* Extension for Vc barButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673E78E283D61AE008BEA41 /* Extension for Vc barButtonItem.swift */; };
 		3673E791283D61BE008BEA41 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673E790283D61BE008BEA41 /* String + Extension.swift */; };
+		3677E2DD2845508500021D5A /* WIshListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677E2DC2845508500021D5A /* WIshListViewController.swift */; };
+		3677E2DF2845509300021D5A /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677E2DE2845509300021D5A /* WishListView.swift */; };
 		368427E5284298240040A7C9 /* intro_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 368427E4284298240040A7C9 /* intro_black.ttf */; };
 		36A35F792844FE3D000CCAB1 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A35F782844FE3D000CCAB1 /* CartView.swift */; };
 		36A35F7B2844FE4A000CCAB1 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A35F7A2844FE4A000CCAB1 /* CartViewController.swift */; };
+		36A35F7D28451872000CCAB1 /* intro-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36A35F7C28451872000CCAB1 /* intro-regular.otf */; };
 		36BB14D6283D67A100CE0EDE /* RegistrationFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB14D5283D67A100CE0EDE /* RegistrationFinishedViewController.swift */; };
 		36BB14D8283D67B400CE0EDE /* RegistrationFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB14D7283D67B400CE0EDE /* RegistrationFinishedView.swift */; };
 		36BB14DA283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB14D9283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift */; };
@@ -46,9 +49,12 @@
 		3673E78C283D618E008BEA41 /* UiStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiStackViewExtension.swift; sourceTree = "<group>"; };
 		3673E78E283D61AE008BEA41 /* Extension for Vc barButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension for Vc barButtonItem.swift"; sourceTree = "<group>"; };
 		3673E790283D61BE008BEA41 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		3677E2DC2845508500021D5A /* WIshListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIshListViewController.swift; sourceTree = "<group>"; };
+		3677E2DE2845509300021D5A /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		368427E4284298240040A7C9 /* intro_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro_black.ttf; sourceTree = "<group>"; };
 		36A35F782844FE3D000CCAB1 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		36A35F7A2844FE4A000CCAB1 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		36A35F7C28451872000CCAB1 /* intro-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "intro-regular.otf"; sourceTree = "<group>"; };
 		36BB14D5283D67A100CE0EDE /* RegistrationFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFinishedViewController.swift; sourceTree = "<group>"; };
 		36BB14D7283D67B400CE0EDE /* RegistrationFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFinishedView.swift; sourceTree = "<group>"; };
 		36BB14D9283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupViewControllerWithScrollView!.swift"; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 		36A35F69284360BE000CCAB1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				36A35F7C28451872000CCAB1 /* intro-regular.otf */,
 				368427E4284298240040A7C9 /* intro_black.ttf */,
 			);
 			path = Fonts;
@@ -195,6 +202,8 @@
 		36A35F762844FE1C000CCAB1 /* WishListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				3677E2DC2845508500021D5A /* WIshListViewController.swift */,
+				3677E2DE2845509300021D5A /* WishListView.swift */,
 			);
 			path = WishListScreen;
 			sourceTree = "<group>";
@@ -285,6 +294,7 @@
 				3673E779283D6042008BEA41 /* LaunchScreen.storyboard in Resources */,
 				3673E776283D6042008BEA41 /* Assets.xcassets in Resources */,
 				3673E774283D6040008BEA41 /* Main.storyboard in Resources */,
+				36A35F7D28451872000CCAB1 /* intro-regular.otf in Resources */,
 				368427E5284298240040A7C9 /* intro_black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,9 +320,11 @@
 				3673E791283D61BE008BEA41 /* String + Extension.swift in Sources */,
 				36BB14DA283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift in Sources */,
 				36A35F7B2844FE4A000CCAB1 /* CartViewController.swift in Sources */,
+				3677E2DF2845509300021D5A /* WishListView.swift in Sources */,
 				3673E784283D6100008BEA41 /* MainShopScreenIfSkipAuthorizationView.swift in Sources */,
 				36A35F792844FE3D000CCAB1 /* CartView.swift in Sources */,
 				3673E76F283D6040008BEA41 /* SceneDelegate.swift in Sources */,
+				3677E2DD2845508500021D5A /* WIshListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

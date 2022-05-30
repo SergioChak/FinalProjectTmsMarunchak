@@ -331,7 +331,7 @@ extension RegistrationViewController{
         ])
         
         NSLayoutConstraint.activate([
-            logoImage.topAnchor.constraint(equalTo: backGroundView.safeAreaLayoutGuide.topAnchor,constant: 96),
+            logoImage.topAnchor.constraint(equalTo: backGroundView.safeAreaLayoutGuide.topAnchor,constant: 64),
             logoImage.leftAnchor.constraint(equalTo: backGroundView.leftAnchor, constant: 32),
             logoImage.rightAnchor.constraint(equalTo: backGroundView.rightAnchor, constant: -32),
             widthOfLogosImage,HeightOfLogosImage
