@@ -24,9 +24,8 @@ class CartViewController: UIViewController {
         backbutton.setImage(UIImage(named: "arrow_back"), for: .normal)
         backbutton.isHidden = true
         backbutton.tintColor = .black
-        backbutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+//        backbutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
-        // Do any additional setup after loading the view.
     }
     
 
@@ -34,10 +33,13 @@ class CartViewController: UIViewController {
 
 extension CartViewController:buttonTapp{
     func buttonTaps() {
-        navigationController?.popToRootViewController(animated: false)
+//        navigationController?.popToRootViewController(animated: false)
+        navigationController?.pushViewController(RegistrationViewController(), animated: false)
+        navigationController?.viewControllers.remove(at: .zero)
+
     }
     
-    @objc private func backAction(){
-    self.navigationController?.popViewController(animated: true)
-}
+//    @objc private func backAction(){
+//    self.navigationController?.popViewController(animated: true)
+//}
 }

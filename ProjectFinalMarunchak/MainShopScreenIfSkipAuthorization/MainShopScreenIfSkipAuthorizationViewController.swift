@@ -15,7 +15,8 @@ class MainShopScreenIfSkipAuthorizationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-view = MainShopScreenIfSkipAuthorizationView()
+        view = MainShopScreenIfSkipAuthorizationView()
+        (view as? MainShopScreenIfSkipAuthorizationView)?.delegate = self
         view.backgroundColor = .systemMint
         // Do any additional setup after loading the view.
     }
@@ -36,8 +37,8 @@ view = MainShopScreenIfSkipAuthorizationView()
 extension MainShopScreenIfSkipAuthorizationViewController:buttonTapper{
     func buttonTaps() {
         print(" i should disappear")
-        navigationController?.pushViewController(SignupViewController(), animated: false)
-//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: false)
+        //        self.dismiss(animated: true, completion: nil)
     
 }
 }

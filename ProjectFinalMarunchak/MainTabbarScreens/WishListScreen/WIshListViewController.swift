@@ -24,7 +24,8 @@ class WIshListViewController: UIViewController {
         backbutton.tintColor = .black
         backbutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
-        // Do any additional setup after loading the view.
+        
+//        self.tabBarItem.selectedImage = UIImage(named: "wishListTabBarItem")?.withTintColor(.red)
     }
     
 
@@ -32,7 +33,9 @@ class WIshListViewController: UIViewController {
 
 extension WIshListViewController:buttonTapOnWishList{
     func buttonTaps() {
-        navigationController?.popToRootViewController(animated: false)
+        navigationController?.pushViewController(RegistrationViewController(), animated: false)
+        navigationController?.viewControllers.remove(at: .zero)
+        
     }
     
     @objc private func backAction(){

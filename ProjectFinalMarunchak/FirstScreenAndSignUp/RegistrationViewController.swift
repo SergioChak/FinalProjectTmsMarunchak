@@ -261,22 +261,54 @@ class RegistrationViewController: UIViewController {
         signUpButton.tintColor = .red
     }
     
-    @objc private func skipButtonDidtap(){
-        navigationController?.pushViewController(WIshListViewController(), animated: true)
-
+    @objc private func skipButtonDidtap(_ sender:UIButton){
+        //        navigationController?.pushViewController(WIshListViewController(), animated: true)
+        let mainScreen = MainScreenViewController()
+        let catalogueScreen = CatalogueViewController()
+        let cartScreen = CartViewController()
+        let wishListScreen = WIshListViewController()
+        let extraMenuScreen = ExtraMenuViewController()
+        
+        let tabBarVc = UITabBarController()
+        tabBarVc.viewControllers = [mainScreen,catalogueScreen,cartScreen,wishListScreen,extraMenuScreen]
+        
+        tabBarVc.tabBar.tintColor = UIColor(red: 0.976, green: 0.706, blue: 0.004, alpha: 1)
+        
+        
+        guard let items = tabBarVc.tabBar.items else {
+            return
+        }
+        
+        let images = ["homeScreenTabbarItem","catalogTabBarItem","BasketTabBarItem", "wishListTabBarItem", "extraPageTabBarItem"]
+        
+        for element in 0..<items.count{
+            items[element].image = UIImage(named: images[element])
+            print("tabbar is working?")
+        }
+        navigationController?.pushViewController(tabBarVc, animated: true)
+        navigationController?.viewControllers.remove(at: .zero)
+        
+        UIView.transition(with: view,
+                             duration: 0.5,
+                             options: [.transitionFlipFromLeft],
+                             animations: nil,
+                             completion: nil)
     }
     
     //MARK: тут сделал переход на основной экран, сделав его рутовым навиг контроллером. Надо добавить еще таббары!!!
     @objc private func signInButtonDidTap(){
-        let navVc = UINavigationController(rootViewController: MainShopScreenIfSkipAuthorizationViewController())
-            navVc.modalPresentationStyle = .fullScreen
-            self.present(navVc, animated: true)
+        navigationController?.pushViewController(MainShopScreenIfSkipAuthorizationViewController(), animated: true)
+        
+//        let navVc = UINavigationController(rootViewController: MainShopScreenIfSkipAuthorizationViewController())
+//            navVc.modalPresentationStyle = .fullScreen
+//            self.present(navVc, animated: true)
        
     }
 }
 
 //MARK: - textField delegate extension
     extension RegistrationViewController: UITextFieldDelegate{
+        
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             emailTextFiled.resignFirstResponder()
             passwordTextField.resignFirstResponder()
