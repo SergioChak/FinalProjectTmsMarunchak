@@ -12,7 +12,7 @@ class CatalogueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = CatalogueView()
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
     }

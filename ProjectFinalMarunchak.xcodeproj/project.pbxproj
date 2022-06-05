@@ -32,6 +32,7 @@
 		36A35F792844FE3D000CCAB1 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A35F782844FE3D000CCAB1 /* CartView.swift */; };
 		36A35F7B2844FE4A000CCAB1 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A35F7A2844FE4A000CCAB1 /* CartViewController.swift */; };
 		36A35F7D28451872000CCAB1 /* intro-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36A35F7C28451872000CCAB1 /* intro-regular.otf */; };
+		36A61180284CCC610030B8BA /* ViewControllerWithTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6117F284CCC610030B8BA /* ViewControllerWithTable.swift */; };
 		36BB14D6283D67A100CE0EDE /* RegistrationFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB14D5283D67A100CE0EDE /* RegistrationFinishedViewController.swift */; };
 		36BB14D8283D67B400CE0EDE /* RegistrationFinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB14D7283D67B400CE0EDE /* RegistrationFinishedView.swift */; };
 		36BB14DA283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB14D9283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift */; };
@@ -67,6 +68,7 @@
 		36A35F782844FE3D000CCAB1 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		36A35F7A2844FE4A000CCAB1 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		36A35F7C28451872000CCAB1 /* intro-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "intro-regular.otf"; sourceTree = "<group>"; };
+		36A6117F284CCC610030B8BA /* ViewControllerWithTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithTable.swift; sourceTree = "<group>"; };
 		36BB14D5283D67A100CE0EDE /* RegistrationFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFinishedViewController.swift; sourceTree = "<group>"; };
 		36BB14D7283D67B400CE0EDE /* RegistrationFinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFinishedView.swift; sourceTree = "<group>"; };
 		36BB14D9283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupViewControllerWithScrollView!.swift"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				3673E76C283D6040008BEA41 /* AppDelegate.swift */,
 				3673E76E283D6040008BEA41 /* SceneDelegate.swift */,
 				36BB14D9283EB42F00CE0EDE /* SignupViewControllerWithScrollView!.swift */,
+				36A6117E284CCC190030B8BA /* TrainingInTableview */,
 				36BB14DB283F7EF900CE0EDE /* HomeTaskWithFrames(Delete After) */,
 				36A35F722844FA23000CCAB1 /* MainTabbarScreens */,
 				36A35F68284360A2000CCAB1 /* LaunchScreens */,
@@ -233,6 +236,14 @@
 			path = ExtraScreen;
 			sourceTree = "<group>";
 		};
+		36A6117E284CCC190030B8BA /* TrainingInTableview */ = {
+			isa = PBXGroup;
+			children = (
+				36A6117F284CCC610030B8BA /* ViewControllerWithTable.swift */,
+			);
+			path = TrainingInTableview;
+			sourceTree = "<group>";
+		};
 		36BB14D4283D675600CE0EDE /* AfterRegistrationScreens */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +348,7 @@
 				36BB14DD283F7F1800CE0EDE /* FramesView.swift in Sources */,
 				3673E771283D6040008BEA41 /* LaunchViewController.swift in Sources */,
 				3673E782283D60E2008BEA41 /* MainShopScreenIfSkipAuthorizationViewController.swift in Sources */,
+				36A61180284CCC610030B8BA /* ViewControllerWithTable.swift in Sources */,
 				3673E76D283D6040008BEA41 /* AppDelegate.swift in Sources */,
 				3677E2E5284609B000021D5A /* CatalogueViewController.swift in Sources */,
 				3673E791283D61BE008BEA41 /* String + Extension.swift in Sources */,

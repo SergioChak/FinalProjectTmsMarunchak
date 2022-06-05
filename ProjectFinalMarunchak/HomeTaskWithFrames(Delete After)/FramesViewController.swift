@@ -11,6 +11,7 @@ class FramesViewController: UIViewController {
 
     override func loadView() {
         view = FramesView()
+        (view as? FramesView)?.delegate = self
         view.backgroundColor = .systemMint.withAlphaComponent(1)
         view.isUserInteractionEnabled = true
         (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .portrait
@@ -25,6 +26,15 @@ class FramesViewController: UIViewController {
 
 
 
+}
+
+extension FramesViewController:buttonTapper{
+    func buttonTaps() {
+        present(ViewControllerWithTable(), animated: true)
+//        navigationController?.pushViewController(ViewControllerWithTable(), animated: false)
+    }
+    
+    
 }
     
     

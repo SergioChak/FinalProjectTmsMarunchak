@@ -8,6 +8,9 @@
 import UIKit
 
 final class FramesView: UIView {
+    
+    weak var delegate:buttonTapper?
+    
     private let thanksLabel: UILabel = {
         let label = UILabel()
         label.text = "Thank You\nFor Registration!"
@@ -43,7 +46,7 @@ final class FramesView: UIView {
         button.layer.cornerRadius = 10
         button.setTitleColor(UIColor.black, for: .normal)
         button.isUserInteractionEnabled = true
-        button.setTitle("Go Shopping!", for: .normal)
+        button.setTitle("открыть таблицу!", for: .normal)
         button.addTarget(self, action: #selector(buttonTaps), for: .touchUpInside)
         button.clipsToBounds = true
         return button
@@ -85,6 +88,7 @@ final class FramesView: UIView {
      }
      
      @objc private func buttonTaps(){
+         delegate?.buttonTaps()
          print("the button was actually tapped!")
          UIView.animateKeyframes(withDuration: 4, delay: .zero, options: [.calculationModePaced,.autoreverse]){
              UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1){

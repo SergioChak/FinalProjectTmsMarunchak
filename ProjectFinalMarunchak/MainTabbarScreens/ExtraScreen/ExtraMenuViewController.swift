@@ -12,7 +12,7 @@ class ExtraMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = ExtraMenuView()
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
     }

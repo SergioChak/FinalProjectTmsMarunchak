@@ -283,7 +283,6 @@ class RegistrationViewController: UIViewController {
         
         for element in 0..<items.count{
             items[element].image = UIImage(named: images[element])
-            print("tabbar is working?")
         }
         navigationController?.pushViewController(tabBarVc, animated: true)
         navigationController?.viewControllers.remove(at: .zero)

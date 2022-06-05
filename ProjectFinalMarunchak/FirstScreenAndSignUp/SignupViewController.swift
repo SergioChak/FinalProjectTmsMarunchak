@@ -124,9 +124,11 @@ class SignupViewController: UIViewController {
         textField.widthAnchor.constraint(equalToConstant: 335).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         textField.rightView = UIImageView.init(image: UIImage(named: "eye"))
+//        textField.rightView?.insetsLayoutMarginsFromSafeArea = true
 //        textField.rightView?.frame = CGRect(x: 0, y: 0, width: 25, height: 19.44)
         textField.rightView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         textField.rightView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
+//        textField.rightView?.trailingAnchor.constraint(equalTo: textField., constant: <#T##CGFloat#>)
         textField.rightView?.tintColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1)
         textField.rightViewMode = .unlessEditing
         

@@ -12,7 +12,7 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = MainScreenView()
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
     }
